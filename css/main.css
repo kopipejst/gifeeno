@@ -1,0 +1,172 @@
+html {
+    background: url(../img/bg_pattern.png) repeat-x center top;
+}
+
+body {
+    font-size: 14px;
+    font-family: Verdana, sans-serif;
+    background: url(../img/bg.png) no-repeat center top;
+    margin: 0;
+    font-size: 14px;
+}
+
+a {
+    color: #0085B2;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#thumbs-holder {
+    text-align: left;
+    width: 225px;
+    position: absolute;
+    top: 140px;
+    left: 50%;
+    padding: 20px 0 10px 30px;
+    //margin-left: 320px;
+    height: 490px;
+    background-color: #ddd;
+    border-radius: 10px;
+}
+
+#thumbs {
+    height: 455px;
+    overflow: auto;
+}
+
+#thumbs img {
+    vertical-align: bottom;
+    border: 1px solid #fff;
+    margin: 0 10px 10px 0;
+    width: 100px;
+}
+
+#options {
+    width: 320px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+}
+
+.button {
+    background-color: #7AC179;
+    border-radius: 3px;
+    color: white;
+    line-height: 40px;
+    border-radius: 20px;
+    padding: 0 20px;
+    font-size: 16px;
+    width: 160px;
+    cursor: pointer;
+    display: inline-block;
+    border: none;
+}
+.disabled {
+    background-color: #ccc;
+    cursor: default;
+}
+.button.disabled:hover {
+    box-shadow: none;
+}
+
+.button:hover {
+    box-shadow: 0 0 7px #69A770;
+}
+
+#start {
+    margin: 20px auto 0;
+    line-height: 60px;
+    border-radius: 30px;
+    font-size: 25px;
+}
+
+#main-window {
+    text-align: center;
+    padding: 140px 0 0;
+}
+
+#main-window video {
+    width: 640px;
+    height: 480px;
+    border: 20px solid #eee;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+#video-holder {
+    width: 680px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#indicator {
+    background-color: #7AC179;
+    height: 2px;
+    border-radius: 1px;
+    width: 0;
+}
+
+#note {
+    background: #eee;
+    border-radius: 5px;
+    padding: 23px;
+    width: 620px;
+    margin: 60px auto 0;
+}
+
+#footer {
+    text-align: center;
+    margin: 60px 0 20px;
+    font-size: 12px;
+}
+
+.close {
+    width: 52px;
+    height: 47px;
+    background: url(../img/close.png) no-repeat;
+    right: 0;
+    top: 0;
+    position: absolute;
+    margin-top: -22px;
+    margin-right: -30px;
+    cursor: pointer;
+}
+
+#thumbs-holder-close {
+    display: none;
+}
+
+#overlay-bg {
+    background-color: #000;
+    opacity: 0.5;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+}
+
+#overlay {
+    background: #fff url(../img/bg_pattern_overlay.png) bottom center repeat-x;
+    border-radius: 5px;
+    width: 640px;
+    padding: 20px;
+    display: none;
+    position: absolute;
+    top: 140px;
+    left: 50%;
+    margin-left: -340px;
+    text-align: center;
+    min-height: 480px;
+}
+
+#overlay img {
+    border: 20px solid #eee;
+    border-radius: 5px;
+}
