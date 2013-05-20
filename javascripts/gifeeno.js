@@ -4,13 +4,14 @@ var encoder = new GIFEncoder(),
     canvas = document.querySelector('canvas'),
     ctx = canvas.getContext('2d'),
     localMediaStream = null,
-    snapshotPause = 1000,
+    snapshotPause = 2000,
     recording = false,
+    framesPause = 200,
     t;
 
 encoder.setSize(320, 240);
 encoder.setRepeat(0);
-encoder.setDelay(100);
+encoder.setDelay(framesPause);
 encoder.setQuality(20);
 
 window.URL = window.URL || window.webkitURL;
@@ -41,7 +42,9 @@ function snapshot() {
     }
 }
 
-function overlayShow() {
+function overlayShow(panel) {
+    $('.panel').hide();
+    $('#' + panel).show();
     $('#overlay-bg').show();
     $('#overlay').show();
 }
@@ -66,7 +69,7 @@ $('#start').click(function () {
 
         $('#indicator').show().animate({
             width: '100%'
-        }, snapshotPause, function  () {
+        }, snapshotPause, function () {
             $('#indicator').css({
                 'width': '0'
             });
@@ -78,6 +81,7 @@ $('#start').click(function () {
             $('#indicator').animate({
                 width: '100%'
             }, snapshotPause, function () {
+                console.log(snapshotPause);
                 $('#indicator').css({
                     'width': '0'
                 });
@@ -99,7 +103,7 @@ $('#start').click(function () {
         encoder.finish();
 
         $('#result-gif').html('').append(gif);
-        overlayShow();
+        overlayShow('preview');
         //b64 = encode64(binaryGif);
     }
 
@@ -112,8 +116,27 @@ $('#thumbs-holder-close').click(function () {
     }, 300);
 });
 
-$('#new').click(function () {
+$('#overlay-close').click(function () {
     overlayHide();
+});
+
+$('.new').click(function () {
+    overlayHide();
+});
+
+$('#showSettings').click(function () {
+    overlayShow('settings');
+});
+
+$('input[type=range]').change(function () {
+    var id = $(this).attr('id'),
+        val = $(this).val();
+    $(this).next().html(val);
+    window[id] = parseInt(val);
+    if (id === 'framesPause') {
+        framesPause = val;
+        encoder.setDelay(framesPause);
+    }
 });
 
 // $('#save').click(function () {
@@ -136,9 +159,4 @@ $('#new').click(function () {
 
 
 // });
-
-
-
-
-
 
