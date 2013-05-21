@@ -18,7 +18,7 @@
     <div id="main-window">
 
         <div id="video-holder">
-            <img src="img/start.gif" id="start-image" />
+            <img src="img/start2.gif" id="start-image" />
             <video autoplay id="video"></video>
             <canvas width="320" height="240" style="display: none;"></canvas>
             <div id="showSettings"></div>
@@ -26,6 +26,9 @@
         </div>
 
         <button class="button" id="start">
+            Start
+        </button>
+        <button class="button disabled" id="start-fake">
             Start
         </button>
 
@@ -87,8 +90,8 @@
         <div id="settings" class="panel">
             <h2>Settings</h2>
             Delay between snapshots (in miliseconds):<br /><br />
-            <input type="range" min="500" max="5000" id="snapshotPause" value="2000" />
-            <span class="value">2000</span>
+            <input type="range" min="500" max="5000" id="snapshotPause" value="1000" />
+            <span class="value">1000</span>
             <br /><br />
             Delay between frames in animated gif (in miliseconds):<br /><br />
             <input type="range" min="100" max="1000" id="framesPause" value="200" />

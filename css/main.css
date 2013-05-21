@@ -72,17 +72,22 @@ a:hover {
 }
 .button.disabled:hover {
     box-shadow: none;
+    background-color: #ccc;
 }
 
 .button:hover {
     background-color: #67A566;
 }
 
-#start {
+#start,
+#start-fake {
     margin: 20px auto 0;
     line-height: 60px;
     border-radius: 30px;
     font-size: 20px;
+}
+#start {
+    display: none;
 }
 
 #main-window {

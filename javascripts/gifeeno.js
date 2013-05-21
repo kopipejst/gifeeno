@@ -4,7 +4,7 @@ var encoder = new GIFEncoder(),
     canvas = document.querySelector('canvas'),
     ctx = canvas.getContext('2d'),
     localMediaStream = null,
-    snapshotPause = 2000,
+    snapshotPause = 1000,
     recording = true,
     framesPause = 200,
     maxFrames = 9,
@@ -24,8 +24,8 @@ if (navigator.getUserMedia) {
             audio: true,
             video: true
         }, function (stream) {
-            $('#start-image').hide();
-            $('#video').show();
+            $('#start-image, #start-fake').hide();
+            $('#video, #start').show();
             video.src = window.URL.createObjectURL(stream);
             localMediaStream = stream;
         }, function (e) {
