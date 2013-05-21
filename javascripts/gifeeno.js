@@ -7,6 +7,8 @@ var encoder = new GIFEncoder(),
     snapshotPause = 2000,
     recording = false,
     framesPause = 200,
+    maxFrames = 9,
+    totalFrames = 0,
     t;
 
 encoder.setSize(320, 240);
@@ -39,7 +41,29 @@ function snapshot() {
 
         var image = $('<img />').attr('src', canvas.toDataURL('image/webp'));
         $('#thumbs').append(image);
+        totalFrames++;
+        if (totalFrames === maxFrames) {
+            recordingEnd();
+        }
     }
+}
+
+function recordingEnd() {
+    var binaryGif = encoder.stream().getData(),
+        dataUrl = 'data:image/gif;base64,' + encode64(binaryGif),
+        gif = $('<img />').attr('src', dataUrl);
+
+    totalFrames = 0;
+
+    $('#start').html('Start');
+    clearInterval(t);
+    $('#indicator').hide();
+
+    encoder.finish();
+
+    $('#result-gif').html('').append(gif);
+    overlayShow('preview');
+    //b64 = encode64(binaryGif);
 }
 
 function overlayShow(panel) {
@@ -81,7 +105,6 @@ $('#start').click(function () {
             $('#indicator').animate({
                 width: '100%'
             }, snapshotPause, function () {
-                console.log(snapshotPause);
                 $('#indicator').css({
                     'width': '0'
                 });
@@ -92,22 +115,13 @@ $('#start').click(function () {
 
     } else {
 
-        var binaryGif = encoder.stream().getData(),
-            dataUrl = 'data:image/gif;base64,' + encode64(binaryGif),
-            gif = $('<img />').attr('src', dataUrl);
-
-        $(this).html('Start');
-        clearInterval(t);
-        $('#indicator').hide();
-
-        encoder.finish();
-
-        $('#result-gif').html('').append(gif);
-        overlayShow('preview');
-        //b64 = encode64(binaryGif);
+        recordingEnd();
     }
 
 });
+
+
+
 
 $('#thumbs-holder-close').click(function () {
     $(this).hide();
