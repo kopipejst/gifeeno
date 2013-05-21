@@ -5,7 +5,7 @@ var encoder = new GIFEncoder(),
     ctx = canvas.getContext('2d'),
     localMediaStream = null,
     snapshotPause = 2000,
-    recording = false,
+    recording = true,
     framesPause = 200,
     maxFrames = 9,
     totalFrames = 0,
@@ -54,6 +54,7 @@ function recordingEnd() {
         gif = $('<img />').attr('src', dataUrl);
 
     totalFrames = 0;
+    recording = !recording;
 
     $('#start').html('Start');
     clearInterval(t);
@@ -80,10 +81,8 @@ function overlayHide() {
 
 $('#start').click(function () {
 
-    recording = !recording;
-
     if (recording) {
-
+        recording = !recording;
         $('#thumbs-holder-close').show();
         $('#thumbs-holder').animate({
             'margin-left': '320px'
