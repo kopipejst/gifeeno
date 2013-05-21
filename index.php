@@ -29,7 +29,7 @@
         </button>
 
         <div class="share">
-            Share: <a href="http://twitter.com/share?text=Use%20Web%20Camera%20API%20to%20Create%20Animated%20GIF&url=http://gifeeno.workshop.rs" class="social twitter">&nbsp;</a> <a href="http://www.facebook.com/sharer.php?u=http://gifeeno.workshop.rs" class="social facebook">&nbsp;</a>
+            Share: <a href="http://twitter.com/share?text=Use%20Web%20Camera%20API%20to%20Create%20Animated%20GIF%20%23gifeeno&url=http://gifeeno.workshop.rs" class="social twitter">&nbsp;</a> <a href="http://www.facebook.com/sharer.php?u=http://gifeeno.workshop.rs" class="social facebook">&nbsp;</a>
         </div>
 
     </div>

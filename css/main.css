@@ -75,7 +75,7 @@ a:hover {
 }
 
 .button:hover {
-    box-shadow: 0 0 7px #67A566;
+    background-color: #67A566;
 }
 
 #start {
@@ -242,7 +242,7 @@ input[type='range']::-webkit-slider-thumb {
     border-radius: 21px;
 }
 .social:hover {
-    box-shadow: 0 0 7px #67A566;
+    box-shadow: 0 0 2px #333;
     text-decoration: none;
 }
 
