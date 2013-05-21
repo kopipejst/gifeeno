@@ -82,7 +82,9 @@ function overlayHide() {
 $('#start').click(function () {
 
     if (recording) {
+
         recording = !recording;
+
         $('#thumbs-holder-close').show();
         $('#thumbs-holder').animate({
             'margin-left': '320px'
