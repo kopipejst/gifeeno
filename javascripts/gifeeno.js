@@ -24,6 +24,8 @@ if (navigator.getUserMedia) {
             audio: true,
             video: true
         }, function (stream) {
+            $('#start-image').hide();
+            $('#video').show();
             video.src = window.URL.createObjectURL(stream);
             localMediaStream = stream;
         }, function (e) {
@@ -31,7 +33,7 @@ if (navigator.getUserMedia) {
         }
     );
 } else {
-    alert('not supported');
+    console.log('not supported');
 }
 
 function snapshot() {

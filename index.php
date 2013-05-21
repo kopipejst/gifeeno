@@ -18,7 +18,8 @@
     <div id="main-window">
 
         <div id="video-holder">
-            <video autoplay></video>
+            <img src="img/start.gif" id="start-image" />
+            <video autoplay id="video"></video>
             <canvas width="320" height="240" style="display: none;"></canvas>
             <div id="showSettings"></div>
             <div id="indicator"></div>

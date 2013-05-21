@@ -99,6 +99,12 @@ a:hover {
     background-color: #fff;
 }
 
+#start-image {
+    border: 20px solid #eee;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 120px 160px;
+}
 #video-holder {
     width: 680px;
     margin: 0 auto;
@@ -248,4 +254,8 @@ input[type='range']::-webkit-slider-thumb {
 
 .facebook {
     background-position: -52px -1px;
+}
+
+#video {
+    display: none;
 }
